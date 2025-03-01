@@ -13,3 +13,9 @@ for i in range(50):
 
 GPIO.cleanup() #prevents unusual behavior
 
+print("JOhn is cool") #delete later
+print("John")
+print("ee")
+
+
+
