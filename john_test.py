@@ -12,3 +12,4 @@ for i in range(50):
     
 
 GPIO.cleanup() #prevents unusual behavior
+
