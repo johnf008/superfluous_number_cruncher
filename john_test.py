@@ -9,5 +9,6 @@ for i in range(50):
     time.sleep(1)
     GPIO.output(7, False)
     time.sleep(1)
+    
 
 GPIO.cleanup() #prevents unusual behavior
