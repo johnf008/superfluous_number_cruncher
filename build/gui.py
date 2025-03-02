@@ -31,9 +31,10 @@ def goofy_ahh_function():
     num = random.randint(0, 10)
 
     if (num == 5 or t):
-        print("button clicked")
-        t = True
-        entry_1.insert(tk.END, "hello! :3")       
+        if(not t):
+            print("button clicked")
+            entry_1.insert(tk.END, "hello! :3") 
+        t = True      
     else:
         print("youre actually stupid")
 
