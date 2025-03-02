@@ -78,7 +78,7 @@ class DHT11():
 
 
 if __name__ == '__main__':
-    dht11 = DHT11(17)
+    dht11 = DHT11(12)
     while True:
         humidity, temperature = dht11.read_data()
         print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {humidity}%")
