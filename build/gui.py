@@ -5,14 +5,13 @@
 
 from pathlib import Path
 
-import RPi.GPIO as GPIO
-import sys, random, time
-import tkinter as tk
-
 # from tkinter import *
 # Explicit imports to satisfy Flake8
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+import sys
+import random
 
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
+import tkinter as tk
 
 
 def get_base_path():
@@ -21,6 +20,8 @@ def get_base_path():
     return Path(__file__).parent  / "assets" / "frame0"
 
 ASSETS_PATH = get_base_path()
+
+
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -39,6 +40,7 @@ def goofy_ahh_function():
 
 window = Tk()
 t = False
+
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
 
@@ -89,25 +91,17 @@ image_4 = canvas.create_image(
 image_image_5 = PhotoImage(
     file=relative_to_assets("image_5.png"))
 image_5 = canvas.create_image(
-    131.0,
-    434.0,
+    908.0,
+    443.0,
     image=image_image_5
 )
 
 image_image_6 = PhotoImage(
     file=relative_to_assets("image_6.png"))
 image_6 = canvas.create_image(
-    908.0,
-    443.0,
-    image=image_image_6
-)
-
-image_image_7 = PhotoImage(
-    file=relative_to_assets("image_7.png"))
-image_7 = canvas.create_image(
     516.0,
     110.0,
-    image=image_image_7
+    image=image_image_6
 )
 
 entry_image_1 = PhotoImage(
@@ -224,6 +218,14 @@ button_1.place(
     y=21.0,
     width=190.0,
     height=73.0
+)
+
+image_image_7 = PhotoImage(
+    file=relative_to_assets("image_7.png"))
+image_7 = canvas.create_image(
+    130.0,
+    433.0,
+    image=image_image_7
 )
 window.resizable(False, False)
 window.mainloop()
