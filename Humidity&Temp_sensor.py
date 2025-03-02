@@ -40,12 +40,12 @@ class DHT11():
         while bit_count < self.BITS_LEN:
             print("2.3")
             while gpio.value == 0:
-                print("2.4")
-                #pass
+                #print("2.4")
+                pass
 
             # st = time.time()
             while gpio.value == 1:
-                print("2.5")
+                #print("2.5")
                 delay_count += 1
                 if delay_count > self.MAX_DELAY_COUINT:
                     break
