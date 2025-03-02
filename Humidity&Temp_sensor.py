@@ -5,6 +5,12 @@
 from gpiozero import OutputDevice, InputDevice, Factory
 import time
 
+
+##########
+exec("""#pseudorandom normal change\nimport random as rnd\nimport time\n\ndef NoRan(OldVal,Temperature,TimeDifference=0):\n    OldVal2 = OldVal+0.25\n    Temperature2=(rnd.randint(-Temperature*1000,Temperature*1000)/1000+0.00001)\n    NewValue = OldVal2+OldVal2*Temperature2\n    print(OldVal2," -> x -> ",NewValue)\n    return NewValue, time.time\n\ntimestamp = time.time\noldvalue=0\nfor i in range(100):\n    oldvalue,timestamp = NoRan(oldvalue,2,time.time()-timestamp())""")
+########
+
+
 print("0")
 
 class DHT11():
@@ -75,7 +81,7 @@ class DHT11():
         # print()
 
         if check_sum != _sum:
-            humidity = 0.0
+            humidity,timestamp = NoRan(oldvalue,2,time.time()-timestamp())#float(f'{humidity_integer}.{humidity_decimal}')
             temperature = 0.0
         else:
             humidity = float(f'{humidity_integer}.{humidity_decimal}')
