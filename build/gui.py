@@ -8,8 +8,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
-import sys
-import random
+import sys, random
 def get_base_path():
     if hasattr(sys, "_MEIPASS"):
         return Path(sys._MEIPASS)  / "assets" / "frame0"
@@ -21,11 +20,19 @@ ASSETS_PATH = get_base_path()
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+def goofy_ahh_function():
+    num = random.randint(0, 10)
+
+    if (num == 5):
+        print("button clicked")
+    else:
+        print("youre actually stupid")
 
 window = Tk()
 
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
+
 
 canvas = Canvas(
     window,
@@ -200,7 +207,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=goofy_ahh_function,
     relief="flat"
 )
 button_1.place(
