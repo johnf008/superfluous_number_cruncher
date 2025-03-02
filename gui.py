@@ -5,11 +5,16 @@
 
 from pathlib import Path
 
+import RPi.GPIO as GPIO
+import sys, random, time
+import tkinter as tk
+
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-import tkinter as tk
+
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
-import sys, random
+
+
 def get_base_path():
     if hasattr(sys, "_MEIPASS"):
         return Path(sys._MEIPASS)  / "assets" / "frame0"
@@ -27,11 +32,10 @@ def goofy_ahh_function():
     if (num == 5 or t):
         print("button clicked")
         t = True
-        
-        entry_1.insert(tk.END, "hello! :3")
-        
+        entry_1.insert(tk.END, "hello! :3")       
     else:
         print("youre actually stupid")
+
 
 window = Tk()
 t = False
