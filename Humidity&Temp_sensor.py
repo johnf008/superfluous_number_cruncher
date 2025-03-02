@@ -1,6 +1,6 @@
 #hi
 #idk_what_this_does
-#am_lost
+#am_lost (from ben)
 
 from gpiozero import OutputDevice, InputDevice
 import time
@@ -76,15 +76,6 @@ class DHT11():
         # -------------- return --------------
         return humidity, temperature
 
-
-if __name__ == '__main__':
-    dht11 = DHT11(4)
-    while True:
-        humidity, temperature = dht11.read_data()
-        print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {humidity}%")
-        time.sleep(2)
-
-
 #........................ . ............. .... 
 def read_data(self):
    bit_count = 0
@@ -99,3 +90,10 @@ def read_data(self):
    gpio.close()
    gpio = InputDevice(self._pin, pull_up=self._pull_up)
    #...
+
+if __name__ == '__main__':
+    dht11 = DHT11(4)
+    while True:
+        humidity, temperature = dht11.read_data()
+        print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {humidity}%")
+        time.sleep(2)
