@@ -7,48 +7,18 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-import RPi.GPIO as GPIO
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-import sys
-import random, time
-from gpiozero import OutputDevice, InputDevice, Factory, MotionSensor
-import threading
-from signal import pause 
-
-#import Humidity&Temp_sensor   (change it because i don't think it works because of the & )
-#import Keypad
-#import MotionSensor
-
-import tkinter as tk
 
 
-def get_base_path():
-    if hasattr(sys, "_MEIPASS"):
-        return Path(sys._MEIPASS)  / "assets" / "frame0"
-    return Path(__file__).parent  / "assets" / "frame0"
-
-ASSETS_PATH = get_base_path()
-
+OUTPUT_PATH = Path(__file__).parent
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Carlo\Downloads\build\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def goofy_ahh_function():
-    global t
-    num = random.randint(0, 10)
-
-    if (num == 5 or t):
-        if(not t):
-            print("button clicked")
-            entry_1.insert(tk.END, "hello! :3") 
-        t = True      
-    else:
-        print("youre actually stupid")
-
 
 window = Tk()
-t = False
 
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
@@ -76,48 +46,24 @@ image_1 = canvas.create_image(
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
-    623.0,
-    443.0,
+    517.0,
+    224.0,
     image=image_image_2
 )
 
 image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))
 image_3 = canvas.create_image(
-    517.0,
-    224.0,
-    image=image_image_3
-)
-
-image_image_4 = PhotoImage(
-    file=relative_to_assets("image_4.png"))
-image_4 = canvas.create_image(
-    379.0,
-    443.0,
-    image=image_image_4
-)
-
-image_image_5 = PhotoImage(
-    file=relative_to_assets("image_5.png"))
-image_5 = canvas.create_image(
-    908.0,
-    443.0,
-    image=image_image_5
-)
-
-image_image_6 = PhotoImage(
-    file=relative_to_assets("image_6.png"))
-image_6 = canvas.create_image(
     516.0,
     110.0,
-    image=image_image_6
+    image=image_image_3
 )
 
 entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
-    511.5,
-    330.5,
+    160.0,
+    431.0,
     image=entry_image_1
 )
 entry_1 = Text(
@@ -127,17 +73,17 @@ entry_1 = Text(
     highlightthickness=0
 )
 entry_1.place(
-    x=223.0,
-    y=290.0,
-    width=577.0,
-    height=79.0
+    x=71.0,
+    y=332.0,
+    width=178.0,
+    height=196.0
 )
 
 entry_image_2 = PhotoImage(
     file=relative_to_assets("entry_2.png"))
 entry_bg_2 = canvas.create_image(
-    131.0,
-    532.5,
+    526.0,
+    431.0,
     image=entry_image_2
 )
 entry_2 = Text(
@@ -147,17 +93,17 @@ entry_2 = Text(
     highlightthickness=0
 )
 entry_2.place(
-    x=42.0,
-    y=492.0,
+    x=437.0,
+    y=332.0,
     width=178.0,
-    height=79.0
+    height=196.0
 )
 
 entry_image_3 = PhotoImage(
     file=relative_to_assets("entry_3.png"))
 entry_bg_3 = canvas.create_image(
-    379.0,
-    532.5,
+    892.0,
+    431.0,
     image=entry_image_3
 )
 entry_3 = Text(
@@ -167,50 +113,10 @@ entry_3 = Text(
     highlightthickness=0
 )
 entry_3.place(
-    x=290.0,
-    y=492.0,
-    width=178.0,
-    height=79.0
-)
-
-entry_image_4 = PhotoImage(
-    file=relative_to_assets("entry_4.png"))
-entry_bg_4 = canvas.create_image(
-    634.0,
-    538.5,
-    image=entry_image_4
-)
-entry_4 = Text(
-    bd=0,
-    bg="#FFFFFF",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_4.place(
-    x=545.0,
-    y=498.0,
-    width=178.0,
-    height=79.0
-)
-
-entry_image_5 = PhotoImage(
-    file=relative_to_assets("entry_5.png"))
-entry_bg_5 = canvas.create_image(
-    892.0,
-    538.5,
-    image=entry_image_5
-)
-entry_5 = Text(
-    bd=0,
-    bg="#FFFFFF",
-    fg="#000716",
-    highlightthickness=0
-)
-entry_5.place(
     x=803.0,
-    y=498.0,
+    y=332.0,
     width=178.0,
-    height=79.0
+    height=196.0
 )
 
 button_image_1 = PhotoImage(
@@ -219,7 +125,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=goofy_ahh_function,
+    command=lambda: print("button_1 clicked"),
     relief="flat"
 )
 button_1.place(
@@ -229,12 +135,20 @@ button_1.place(
     height=73.0
 )
 
-image_image_7 = PhotoImage(
-    file=relative_to_assets("image_7.png"))
-image_7 = canvas.create_image(
-    130.0,
-    433.0,
-    image=image_image_7
+image_image_4 = PhotoImage(
+    file=relative_to_assets("image_4.png"))
+image_4 = canvas.create_image(
+    343.0,
+    445.0,
+    image=image_image_4
+)
+
+image_image_5 = PhotoImage(
+    file=relative_to_assets("image_5.png"))
+image_5 = canvas.create_image(
+    708.0,
+    445.0,
+    image=image_image_5
 )
 window.resizable(False, False)
 window.mainloop()
