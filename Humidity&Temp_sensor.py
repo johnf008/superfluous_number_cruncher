@@ -14,6 +14,7 @@ class DHT11():
     def __init__(self, pin, pull_up=False):
         self._pin = pin
         self._pull_up = pull_up
+    print("1")
 
 
     def read_data(self):
@@ -28,7 +29,8 @@ class DHT11():
 
         gpio.close()
         gpio = InputDevice(self._pin, pull_up=self._pull_up)
-
+        
+        print("2")
         # -------------- wait response --------------
         while gpio.value == 1:
             pass
@@ -49,6 +51,8 @@ class DHT11():
                 bits += "1"
             else:
                 bits += "0"
+        
+        print("3")
 
             delay_count = 0
             bit_count += 1
@@ -75,6 +79,7 @@ class DHT11():
             temperature = float(f'{temperature_integer}.{temperature_decimal}')
 
         # -------------- return --------------
+        print("4")
         return humidity, temperature
 
 #........................ . ............. .... 
