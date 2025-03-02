@@ -34,15 +34,19 @@ class DHT11():
         print("2")
         # -------------- wait response --------------
         while gpio.value == 1:
-            pass
-        
+            print("2.1")
+            #pass
+        print("2.2")
         # -------------- read data --------------
         while bit_count < self.BITS_LEN:
+            print("2.3")
             while gpio.value == 0:
-                pass
+                print("2.4")
+                #pass
 
             # st = time.time()
             while gpio.value == 1:
+                print("2.5")
                 delay_count += 1
                 # break
                 time.sleep(1)
