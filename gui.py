@@ -75,6 +75,7 @@ class DHT11():
 
 
     def read_data(self):
+        timestamp = time.time
         bit_count = 0
         delay_count = 0
         bits = ""
