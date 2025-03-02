@@ -28,7 +28,7 @@ class Keypad():
         return pressed_keys
 
 def setup():
-    global keypad, last_key_pressed
+    global keypad, last_key_pressed, current_number
     rowsPins = [18,23,24,25]
     colsPins = [10,22,27,17]
     keys = ["1","2","3","A",
@@ -37,6 +37,7 @@ def setup():
             "*","0","#","D"]
     keypad = Keypad(rowsPins, colsPins, keys)
     last_key_pressed = []
+    current_number = 0
 
 def loop():
     global keypad, last_key_pressed
@@ -44,7 +45,32 @@ def loop():
     if len(pressed_keys) != 0 and last_key_pressed != pressed_keys:
         print(pressed_keys)
     last_key_pressed = pressed_keys
+
+    #john comment: idk if i need to add this into here, but I'm just going to do it anyway
+    set_nums()
     time.sleep(0.1)
+
+def get_nums():
+    global current_number
+    direction = Keypad.read()
+
+    if(direction == "left"):
+        current_number -= 1
+    elif(direction == "right"):
+        current_number += 1
+    
+    if (current_number < 0):
+        current_number = "-" + str(current_number)
+    else:
+        current_number = str(current_number)
+    
+    return current_number
+
+def set_nums():
+    cool_number = get_nums()
+    #set the number to the thing inside of the gui
+    
+
 
 # Define a destroy function for clean up everything after the script finished
 def destroy():
