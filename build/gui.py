@@ -10,11 +10,10 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import sys
 
-
 def get_base_path():
     if hasattr(sys, "_MEIPASS"):
-        return Path(sys._MEIPASS) / "assets" / "frame0"
-    return Path(__file__).parent / "assets" / "frame0"
+        return Path(sys._MEIPASS)  / "assets" / "frame0"
+    return Path(__file__).parent  / "assets" / "frame0"
 
 ASSETS_PATH = get_base_path()
 
@@ -194,6 +193,22 @@ entry_5.place(
     y=498.0,
     width=178.0,
     height=79.0
+)
+
+button_image_1 = PhotoImage(
+    file=relative_to_assets("button_1.png"))
+button_1 = Button(
+    image=button_image_1,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_1 clicked"),
+    relief="flat"
+)
+button_1.place(
+    x=813.0,
+    y=21.0,
+    width=190.0,
+    height=73.0
 )
 window.resizable(False, False)
 window.mainloop()
