@@ -7,9 +7,17 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
+import RPi.GPIO as GPIO
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import sys
-import random
+import random, time
+from gpiozero import OutputDevice, InputDevice, Factory, MotionSensor
+import threading
+from signal import pause 
+
+#import Humidity&Temp_sensor   (change it because i don't think it works because of the & )
+#import Keypad
+#import MotionSensor
 
 import tkinter as tk
 
