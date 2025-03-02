@@ -7,6 +7,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
+import tkinter as tk
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
 import sys, random
 def get_base_path():
@@ -27,6 +28,8 @@ def goofy_ahh_function():
         print("button clicked")
     else:
         print("youre actually stupid")
+    
+    entry_1.insert(tk.END, "hello! :3")
 
 window = Tk()
 
