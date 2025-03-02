@@ -26,7 +26,6 @@ class DHT11():
         # -------------- send start --------------
         gpio = OutputDevice(self._pin)
         gpio.off()
-        time.sleep(0.02)
 
         gpio.close()
         gpio = InputDevice(self._pin, pull_up=self._pull_up)
@@ -48,8 +47,6 @@ class DHT11():
             while gpio.value == 1:
                 print("2.5")
                 delay_count += 1
-                # break
-                time.sleep(0.02)
                 if delay_count > self.MAX_DELAY_COUINT:
                     break
             if delay_count > self.BIT_1_DELAY_COUNT:
