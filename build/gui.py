@@ -8,10 +8,15 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+import sys
 
 
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Carlo\Desktop\build\assets\frame0")
+def get_base_path():
+    if hasattr(sys, "_MEIPASS"):
+        return Path(sys._MEIPASS) / "assets" / "frame0"
+    return Path(__file__).parent / "assets" / "frame0"
+
+ASSETS_PATH = get_base_path()
 
 
 def relative_to_assets(path: str) -> Path:
@@ -38,49 +43,57 @@ canvas.place(x = 0, y = 0)
 image_image_1 = PhotoImage(
     file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
-    623.0,
-    443.0,
+    512.0,
+    300.0,
     image=image_image_1
 )
 
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
-    517.0,
-    224.0,
+    623.0,
+    443.0,
     image=image_image_2
 )
 
 image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))
 image_3 = canvas.create_image(
-    379.0,
-    443.0,
+    517.0,
+    224.0,
     image=image_image_3
 )
 
 image_image_4 = PhotoImage(
     file=relative_to_assets("image_4.png"))
 image_4 = canvas.create_image(
-    131.0,
-    434.0,
+    379.0,
+    443.0,
     image=image_image_4
 )
 
 image_image_5 = PhotoImage(
     file=relative_to_assets("image_5.png"))
 image_5 = canvas.create_image(
-    908.0,
-    443.0,
+    131.0,
+    434.0,
     image=image_image_5
 )
 
 image_image_6 = PhotoImage(
     file=relative_to_assets("image_6.png"))
 image_6 = canvas.create_image(
+    908.0,
+    443.0,
+    image=image_image_6
+)
+
+image_image_7 = PhotoImage(
+    file=relative_to_assets("image_7.png"))
+image_7 = canvas.create_image(
     516.0,
     110.0,
-    image=image_image_6
+    image=image_image_7
 )
 
 entry_image_1 = PhotoImage(
