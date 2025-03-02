@@ -9,7 +9,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import sys
-
+import random
 def get_base_path():
     if hasattr(sys, "_MEIPASS"):
         return Path(sys._MEIPASS)  / "assets" / "frame0"
