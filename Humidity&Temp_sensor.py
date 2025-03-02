@@ -5,6 +5,7 @@
 from gpiozero import OutputDevice, InputDevice, Factory
 import time
 
+print("0")
 
 class DHT11():
     MAX_DELAY_COUINT = 100
@@ -52,7 +53,7 @@ class DHT11():
             else:
                 bits += "0"
         
-        print("3")
+            print("3")
 
             delay_count = 0
             bit_count += 1
