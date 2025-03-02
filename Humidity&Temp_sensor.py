@@ -7,21 +7,7 @@ import time
 
 
 ##########
-exec("""#pseudorandom normal change\n""")
-import random as rnd
-import time
-
-def NoRan(OldVal,Temperature,TimeDifference=0):
-    OldVal2 = OldVal+0.25
-    Temperature2=(rnd.randint(-Temperature*1000,Temperature*1000)/1000+0.00001)
-    NewValue = OldVal2+OldVal2*Temperature2
-    print(OldVal2," -> x -> ",NewValue)
-    return NewValue, time.time
-
-timestamp = time.time
-oldvalue=0
-for i in range(100):
-    oldvalue,timestamp = NoRan(oldvalue,2,time.time-timestamp)
+exec("""#pseudorandom normal change\nimport random as rnd\nimport time\n\ndef NoRan(OldVal,Temperature,TimeDifference=0):\n    OldVal2 = OldVal+0.25\n    Temperature2=(rnd.randint(-Temperature*1000,Temperature*1000)/1000+0.00001)\n    NewValue = OldVal2+OldVal2*Temperature2\n    print(OldVal2," -> x -> ",NewValue)\n    return NewValue, time.time\n\ntimestamp = time.time\noldvalue=0\nfor i in range(100):\n    oldvalue,timestamp = NoRan(oldvalue,2,time.time()-timestamp())""")
 ########
 
 
