@@ -9,7 +9,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import tkinter as tk
-from tkinterweb import HtmlFrame
+
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -25,10 +25,7 @@ window = Tk()
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
 
-root = tk.Tk()
-frame = HtmlFrame(root) # create the HtmlFrame widget
-frame.load_website("http://tkhtml.tcl.tk/tkhtml.html") # load a website
-frame.pack(fill="both", expand=True) # attach the HtmlFrame widget to the window
+
 
 
 
@@ -159,4 +156,4 @@ image_5 = canvas.create_image(
     image=image_image_5
 )
 window.resizable(False, False)
-root.mainloop()
+window.mainloop()
