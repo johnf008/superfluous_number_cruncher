@@ -49,7 +49,7 @@ class DHT11():
                 print("2.5")
                 delay_count += 1
                 # break
-                time.sleep(1)
+                time.sleep(0.02)
                 if delay_count > self.MAX_DELAY_COUINT:
                     break
             if delay_count > self.BIT_1_DELAY_COUNT:
@@ -57,7 +57,7 @@ class DHT11():
             else:
                 bits += "0"
         
-            print("3")
+            print(f"3 {delay_count},{bit_count}")
 
             delay_count = 0
             bit_count += 1
