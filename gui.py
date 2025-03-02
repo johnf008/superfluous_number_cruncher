@@ -9,11 +9,17 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import tkinter as tk
-
+import sys
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Carlo\Downloads\build\assets\frame0")
+def get_base_path():
+    if hasattr(sys, "_MEIPASS"):
+        return Path(sys._MEIPASS)  / "assets" / "frame0"
+    return Path(__file__).parent  / "assets" / "frame0"
+
+ASSETS_PATH = get_base_path()
+
 
 
 def relative_to_assets(path: str) -> Path:
