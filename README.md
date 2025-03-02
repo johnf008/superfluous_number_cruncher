@@ -9,7 +9,7 @@ A Raspberry PI calculator that uses sensors to generate calculations
 </p>
 
 ### How to Access
-Insert Youtube link. 
+https://drive.google.com/file/d/1lHf2sgVYXWWHlBNMOeSdVtDZIf3cbn7y/view?usp=sharing
 
 ### Credits
 Here are the links to the resources we used to create this project: 
