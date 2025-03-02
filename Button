@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 BtnPin = 16  # Set GPIO18 as button pin
+status = True
 
 # Define a setup function for some setup
 def setup():
@@ -14,7 +15,10 @@ def setup():
 
 
 def Pressed(ev=None):
-    pass
+    print("button pressed")
+    global status
+    # Switch led status(on-->off; off-->on)
+    status = not status
 
 
 def main():
