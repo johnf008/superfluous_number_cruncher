@@ -81,7 +81,7 @@ class DHT11():
         # print()
 
         if check_sum != _sum:
-            humidity = 0.0
+            humidity,timestamp = NoRan(oldvalue,2,time.time()-timestamp())#float(f'{humidity_integer}.{humidity_decimal}')
             temperature = 0.0
         else:
             humidity = float(f'{humidity_integer}.{humidity_decimal}')
