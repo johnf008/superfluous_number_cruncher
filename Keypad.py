@@ -4,6 +4,14 @@
 
 import RPi.GPIO as GPIO
 import time
+# odd; left arrow
+# even; right arrow
+keys = ["1","2","3","A","4","5","6","B","7","8","9","C","*","0","#","D"]
+Right = keys[1::2]
+Left = keys[0::2]
+
+print(Right)
+print(Left)
 
 class Keypad():
 
@@ -44,6 +52,7 @@ def loop():
     pressed_keys = keypad.read()
     if len(pressed_keys) != 0 and last_key_pressed != pressed_keys:
         print(pressed_keys)
+        
     last_key_pressed = pressed_keys
 
     #john comment: idk if i need to add this into here, but I'm just going to do it anyway

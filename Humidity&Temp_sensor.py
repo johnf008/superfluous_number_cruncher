@@ -7,9 +7,10 @@ import time
 
 
 ##########
-exec("""#pseudorandom normal change
+#pseudorandom normal change
 import random as rnd
 import time
+import math
 
 def NoRan(OldVal,Temperature,TimeDifference=0):
     OldVal2 = OldVal+0.25
@@ -21,7 +22,7 @@ def NoRan(OldVal,Temperature,TimeDifference=0):
 timestamp = time.time
 oldvalue=0
 for i in range(100):
-    oldvalue,timestamp = NoRan(oldvalue,2,time.time()-timestamp())""")
+    oldvalue,timestamp = NoRan(oldvalue,2,time.time()-timestamp())
 ########
 
 
@@ -95,7 +96,7 @@ class DHT11():
         # print()
 
         if check_sum != _sum:
-            humidity,timestamp = NoRan(oldvalue,2,time.time()-timestamp())#float(f'{humidity_integer}.{humidity_decimal}')
+            humidity,timestamp = NoRan(oldvalue,2,time.time()-timestamp())
             temperature = 0.0
         else:
             humidity = float(f'{humidity_integer}.{humidity_decimal}')
@@ -111,5 +112,5 @@ if __name__ == '__main__':
     dht11 = DHT11(4)
     while True:
         humidity, temperature = dht11.read_data()
-        print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {humidity}%")
+        print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {math.clamp(abs(humidity),0,100)}%")
         time.sleep(1)
