@@ -26,7 +26,7 @@ class DHT11():
         gpio.off()
         time.sleep(0.02)
 
-        #gpio.close()
+        gpio.close()
         gpio = InputDevice(self._pin, pull_up=self._pull_up)
 
         # -------------- wait response --------------
