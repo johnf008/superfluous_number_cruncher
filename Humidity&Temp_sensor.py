@@ -5,6 +5,26 @@
 from gpiozero import OutputDevice, InputDevice, Factory
 import time
 
+
+##########
+exec("""#pseudorandom normal change\n""")
+import random as rnd
+import time
+
+def NoRan(OldVal,Temperature,TimeDifference=0):
+    OldVal2 = OldVal+0.25
+    Temperature2=(rnd.randint(-Temperature*1000,Temperature*1000)/1000+0.00001)
+    NewValue = OldVal2+OldVal2*Temperature2
+    print(OldVal2," -> x -> ",NewValue)
+    return NewValue, time.time
+
+timestamp = time.time
+oldvalue=0
+for i in range(100):
+    oldvalue,timestamp = NoRan(oldvalue,2,time.time-timestamp)
+########
+
+
 print("0")
 
 class DHT11():
