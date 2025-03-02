@@ -32,7 +32,7 @@ class DHT11():
         
         print("2")
         # -------------- wait response --------------
-        while gpio.value == 1 or gpio.value == 0:
+        while not (gpio.value == 1 or gpio.value == 0):
             print("2.1 ",gpio.value)
             #pass
         print("2.2")
