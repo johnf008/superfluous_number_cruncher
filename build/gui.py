@@ -17,22 +17,24 @@ def get_base_path():
 
 ASSETS_PATH = get_base_path()
 
-
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 def goofy_ahh_function():
+    global t
     num = random.randint(0, 10)
 
-    if (num == 5):
+    if (num == 5 or t):
         print("button clicked")
+        t = True
+        
+        entry_1.insert(tk.END, "hello! :3")
+        
     else:
         print("youre actually stupid")
-    
-    entry_1.insert(tk.END, "hello! :3")
 
 window = Tk()
-
+t = False
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
 
