@@ -14,7 +14,7 @@ def setup():
 
 
 def Pressed(ev=None):
-    pass
+    print("button pressed")
 
 
 def main():
