@@ -77,19 +77,6 @@ class DHT11():
         return humidity, temperature
 
 #........................ . ............. .... 
-def read_data(self):
-   bit_count = 0
-   delay_count = 0
-   bits = ""
-
-   # -------------- send start --------------
-   gpio = OutputDevice(self._pin)
-   gpio.off()
-   time.sleep(0.02)
-
-   gpio.close()
-   gpio = InputDevice(self._pin, pull_up=self._pull_up)
-   #...
 
 if __name__ == '__main__':
     dht11 = DHT11(4)
