@@ -42,6 +42,7 @@ class DHT11():
             while gpio.value == 1:
                 delay_count += 1
                 # break
+                time.sleep(1)
                 if delay_count > self.MAX_DELAY_COUINT:
                     break
             if delay_count > self.BIT_1_DELAY_COUNT:
