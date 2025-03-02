@@ -40,8 +40,7 @@ class DHT11():
         while bit_count < self.BITS_LEN:
             print("2.3")
             while gpio.value == 0:
-                #print("2.4")
-                pass
+                print("2.4")
 
             # st = time.time()
             while gpio.value == 1:
