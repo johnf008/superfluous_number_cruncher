@@ -8,7 +8,7 @@ import time
 print("0")
 
 class DHT11():
-    MAX_DELAY_COUINT = 100
+    MAX_DELAY_COUNT = 100
     BIT_1_DELAY_COUNT = 10
     BITS_LEN = 40
 
@@ -32,7 +32,7 @@ class DHT11():
         
         print("2")
         # -------------- wait response --------------
-        while gpio.value == 1:
+        while gpio.value == 1 or gpio.value == 0:
             print("2.1")
             #pass
         print("2.2")
@@ -46,7 +46,7 @@ class DHT11():
             while gpio.value == 1:
                 #print("2.5")
                 delay_count += 1
-                if delay_count > self.MAX_DELAY_COUINT:
+                if delay_count > self.MAX_DELAY_COUNT:
                     break
             if delay_count > self.BIT_1_DELAY_COUNT:
                 bits += "1"
@@ -90,4 +90,4 @@ if __name__ == '__main__':
     while True:
         humidity, temperature = dht11.read_data()
         print(f"{time.time():.3f}  temperature:{temperature}°C  humidity: {humidity}%")
-        time.sleep(2)
+        time.sleep(1)
