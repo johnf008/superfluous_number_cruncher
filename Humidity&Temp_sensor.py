@@ -41,6 +41,7 @@ class DHT11():
             print("2.3")
             while gpio.value == 0:
                 print("2.4")
+                time.sleep(0.001)
 
             # st = time.time()
             while gpio.value == 1:
