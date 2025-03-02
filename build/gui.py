@@ -7,7 +7,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
 import sys
 import random
 def get_base_path():
@@ -26,7 +26,6 @@ window = Tk()
 
 window.geometry("1024x600")
 window.configure(bg = "#FFFFFF")
-
 
 canvas = Canvas(
     window,
