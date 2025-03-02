@@ -1,0 +1,33 @@
+import RPi.GPIO as GPIO
+import time
+BtnPin = 16  # Set GPIO18 as button pin
+
+# Define a setup function for some setup
+def setup():
+    # Set the GPIO modes to BCM Numbering
+    GPIO.setmode(GPIO.BCM)
+    # and initial level to high (3.3v)
+    # Set BtnPin's mode to input,
+    # and pull up to high (3.3V)
+    GPIO.setup(BtnPin, GPIO.IN)
+
+
+
+def Pressed(ev=None):
+    pass
+
+
+def main():
+# Set up a falling detect on BtnPin,
+    GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=Pressed)
+    while True:
+        time.sleep(1)
+
+def destroy():
+    # Release resource
+    GPIO.cleanup()
+
+# If run this script directly, do:
+if __name__ == '__main__':
+    setup()
+    main()
